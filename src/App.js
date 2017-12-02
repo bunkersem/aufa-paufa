@@ -4,12 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 
 // pages
-import HomePage from './pages/Home'
-import ActingPage from './pages/Acting'
-import ArtPage from './pages/Art'
-import GraphicDesignPage from './pages/GraphicDesign'
-import PersonalPage from './pages/Personal'
-import PhotographyPage from './pages/Photography'
+import HomePage from './pages/Home';
+import ActingPage from './pages/Acting';
+import ArtPage from './pages/Art';
+import GraphicDesignPage from './pages/GraphicDesign';
+import PersonalPage from './pages/Personal';
+import PhotographyPage from './pages/Photography';
 
 class App extends Component {
     render() {
@@ -24,20 +24,22 @@ class App extends Component {
         const createRoutes = () =>
             routes.map((route, i) =>
                 <Route key={i} exact path={route.path} component={route.component} />);
-        const createLinks = () => 
-            routes.map((route, i) =>
-                <Link key={i} to={route.path}>{route.name}</Link>)
+        const createLinks = () =>
+            <ul>{routes.map((route, i) =>
+                <li key={i} ><Link className="link-item" to={route.path}>{route.name}</Link></li>)}</ul>;
 
         return (
             <HashRouter>
                 <div className="App">
                     <header className="App-header">
-                        <h1 className="App-title">Welcome to React</h1>
+                        <h1 className="App-title">
+                            <span className="App-title-text">Eva van der Weide</span>
+                        </h1>
                         <nav>
                             {createLinks()}
                         </nav>
                     </header>
-                    <main>
+                    <main className="container">
                         {createRoutes()}
                     </main>
                 </div>
