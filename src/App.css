@@ -22,12 +22,34 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
-    display: inline-block;
+    nav ul li {
+        display: inline-block;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+a:hover {
+    color: rgb(92, 92, 92);
 }
-nav ul li a {
-    text-decoration: none;
-} 
+
+a:active {
+    color: rgb(184, 184, 184);
+}
+
+a.active {
+    color: rgb(220, 104,46);
+}
+
+a.active:hover {
+    color: rgb(235, 173, 120);
+}
+
+a.active:active {
+    color: rgb(250, 200, 160);
+}
+
 
 nav ul li::after {
     content: "o";
@@ -43,6 +65,11 @@ article {
 }
 
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

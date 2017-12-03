@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Link } from 'react-router-dom'
+import { HashRouter, Route, NavLink } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,6 +10,7 @@ import ArtPage from './pages/Art';
 import GraphicDesignPage from './pages/GraphicDesign';
 import PersonalPage from './pages/Personal';
 import PhotographyPage from './pages/Photography';
+import ContactPage from './pages/Contact';
 
 class App extends Component {
     render() {
@@ -20,13 +21,14 @@ class App extends Component {
             { name: 'Graphic Design', path: '/graphic-design', component: GraphicDesignPage },
             { name: 'Personal', path: '/personal', component: PersonalPage },
             { name: 'Photography', path: '/photography', component: PhotographyPage },
+            { name: 'Contact', path: '/contact', component: ContactPage },
         ]
         const createRoutes = () =>
             routes.map((route, i) =>
                 <Route key={i} exact path={route.path} component={route.component} />);
         const createLinks = () =>
             <ul>{routes.map((route, i) =>
-                <li key={i} ><Link className="link-item" to={route.path}>{route.name}</Link></li>)}</ul>;
+                <li key={i} ><NavLink exact className="link-item" to={route.path}>{route.name}</NavLink></li>)}</ul>;
 
         return (
             <HashRouter>
@@ -44,7 +46,6 @@ class App extends Component {
                     </main>
                 </div>
             </HashRouter>
-
         );
     }
 }
