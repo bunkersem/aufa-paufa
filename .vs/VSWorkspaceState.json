@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\pages"
+    "\\public",
+    "\\src"
   ],
-  "SelectedNode": "\\ACtin.jpg",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }
